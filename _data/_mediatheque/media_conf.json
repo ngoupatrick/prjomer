@@ -1,0 +1,13 @@
+{
+    "themes": {
+        "theme_1": {
+            "files": ["ds_un.mp4", "da_deux.mp4"]
+        },
+        "theme_2": {
+            "files": ["DS_vs_DA.mp4"]
+        },
+        "theme_3": {
+            "files": ["AVATAR_ FRONTIERS.mp4"]
+        }
+    }
+}
