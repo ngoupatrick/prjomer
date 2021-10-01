@@ -8,6 +8,7 @@ from _frontend._login_logout import *
 from _frontend._acceuil import *
 from _frontend._user_activity import *
 from _frontend._mediatheque import *
+from _frontend._profil import *
 
 def hide_menu(st):
     #MainMenu {visibility: hidden;}    
@@ -15,8 +16,7 @@ def hide_menu(st):
     
     hide_streamlit_style = """
             <style>
-            MainMenu {visibility: hidden;}    
-            header {visibility: hidden;} 
+             
             footer {visibility: hidden;}
             
             footer:after {
@@ -78,7 +78,9 @@ def main():
         if not is_connect(): return #show the mediatheque, if and only if he is log in
         main_mediatheque(st=st)
     if rad_menu == 'Profil':
-        st.write('Profil En construction...')   
+        if not is_connect(): return #show the mediatheque, if and only if he is log in
+        main_profil(st=st)
+        #st.write('Profil En construction...')   
     #add customize footer    
     #footer_end(st=st)
     

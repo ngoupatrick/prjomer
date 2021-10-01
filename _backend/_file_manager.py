@@ -61,7 +61,6 @@ def get_all_credentials_data():
     return None
 
 def add_user_credentials(data_user):
-    #breakpoint()
     du = data_user
     dt_user = dict()
     dt_user["username"] = du['username']
@@ -114,7 +113,7 @@ def get_group_files(group):
     if not data: return None
     list_files = []
     for key,val in data["data"].items():
-        if key in ["codes","groups", "admin_email"]: continue
+        if key in ["codes","groups", "admin_email","pass_email"]: continue
         if key in ["groups_unique"]: 
             if group in val:
                 break
@@ -147,6 +146,14 @@ def get_admin_email():
     data = get_conf_data()
     if not data: return None
     return data["data"]["admin_email"]
+
+def get_admin_email_credentials():
+    '''
+    get the admin adresse mail
+    '''
+    data = get_conf_data()
+    if not data: return None
+    return data["data"]["admin_email"], data["data"]["pass_email"]
 
 #@sts.cache
 def is_file_in(ets, group, _file):

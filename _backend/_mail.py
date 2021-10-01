@@ -33,8 +33,8 @@ def send_mail_from_admin(recipient, subject, body_text, body_html):
     Send an email from admin to an other user
     '''
     #admin mail settings
-    sender = get_admin_email()
-    pass_sender = PASS_OVH_ADMIN_EMAIL
+    sender, pass_sender = get_admin_email_credentials()
+    #pass_sender = PASS_OVH_ADMIN_EMAIL
     if not sender: return "Bad Admin email" 
     if not check_email(recipient): return "Bad recipient mail"
     #message to send

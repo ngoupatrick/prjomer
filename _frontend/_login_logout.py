@@ -36,7 +36,7 @@ def signupForm(component):
     Create signup form.
     return: dict of new user infos
     '''
-    form = component.form(key='signup_form')
+    form = component.form(key='signup_form', clear_on_submit=True)
     col1, col2 = form.columns(2)
     form.markdown("---")   
       

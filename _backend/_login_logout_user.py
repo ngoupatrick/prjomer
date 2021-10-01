@@ -28,6 +28,14 @@ def is_connect():
     '''        
     return bool(username_connect())
 
+def is_admin(username = None):
+    '''
+    Check if a user is admin
+    return: true if it is admin
+    '''
+    if not username: return bool(username_connect().lower()=="admin")
+    return username.lower() == "admin"
+
 def username_connect():
     '''
     return the username if he is connect and None else
