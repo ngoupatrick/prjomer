@@ -45,7 +45,7 @@ PATH_FILE_CONFIG = "conf.json"
 PATH_FILE_CREDENTIALS = "credentials.json"
 PATH_FILE_MEDIATHEQUE_CONF = "media_conf.json"
 
-PATH_FILE_IMAGE_GRAPH = "head_science.jpg"#"seaborn_struct.png"
+PATH_FILE_IMAGE_GRAPH = "head_science.jpg"
 
 CH_STREAMLIT_IMPORT = "streamlit"
 CH_STREAMLIT_REPORTTHREAD = "streamlit.report_thread"

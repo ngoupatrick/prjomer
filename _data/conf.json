@@ -1,6 +1,6 @@
 {
     "data": {
-        "admin_email": "test@debatcitoyen.org",
+        "admin_email": "test2@debatcitoyen.org",
         "codes": ["ets1", "ets2"],
         "groups": ["g1", "g2", "g3"],
         "groups_unique": ["g1"],
