@@ -11,12 +11,11 @@ from _frontend._mediatheque import *
 from _frontend._profil import *
 
 def hide_menu(st):
-    #MainMenu {visibility: hidden;}    
-    #header {visibility: hidden;} 
-    
+        
     hide_streamlit_style = """
             <style>
-             
+            MainMenu {visibility: hidden;}    
+            header {visibility: hidden;}   
             footer {visibility: hidden;}
             
             footer:after {
