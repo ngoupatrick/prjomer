@@ -16,6 +16,13 @@ def clean_user_session(session):
     Return: bool. if all is correct, it return 'True'
     ''' 
     try:
+        #del user graph info session
+        for key in LIST_COL_PLOT:
+            del_global_session_objet(session=session, key=key)
+        #del the current file data
+        del_global_session_objet(session=session, key=KEY_SESSION_CURRENT_FILE_DATA)
+        del_global_session_objet(session=session, key=KEY_SESSION_CURRENT_COL_GRAPH)                
+        #del user data connexion
         del_global_session_objet(session = session, key=KEY_SESSION_USERNAME)
         del_global_session_objet(session = session, key=KEY_SESSION_USEREMAIL)
     except: return False
@@ -43,6 +50,19 @@ def username_connect():
     session = get_state()
     return get_global_session_objet(session=session, key=KEY_SESSION_USERNAME)
 
+def group_user_connect():
+    '''
+    return the group of user who is connect
+    '''
+    return group_user(username=username_connect())
+
+def group_user(username):
+    '''
+    return the group of user define by his name
+    '''
+    data = get_user_data_by_name(username=username)
+    if not data: return None
+    return data["group"]
 
 
 def find_user(username):

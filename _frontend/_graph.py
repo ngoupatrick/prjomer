@@ -22,7 +22,9 @@ def graph_plot(df, component, _type_plot, title, kwargs):
             
         plot_func = eval("sb."+str(_type_plot))
         fig, ax = plt.subplots()
-        plot_func(data = df, **_kwargs).set(title=title)    
+        chart = plot_func(data = df, **_kwargs)
+        chart.set_title(title)
+        chart.set_xticklabels(chart.get_xticklabels(), rotation=45, horizontalalignment='right')  
         component.pyplot(fig)
     #save graph datas
     save_global_session_objet(session=get_state(), key=kwargs["_col_col"], values=kwargs)

@@ -202,5 +202,21 @@ def get_file_without_ext_list(list_files):
     '''
     return [ch.split('.')[-2] for ch in list_files]
 
+#@sts.cache
+def get_file_and_extension(file_name):
+    '''
+    return the couple (filename, ext)
+    ext is like '.py'
+    '''
+    return os.path.splitext(file_name)
+
+#sts.cache
+def get_type_file(file_name):
+    _,ext = get_file_and_extension(file_name=file_name)
+    _type = None
+    if ext.lower() == '.csv': _type = TYPE_DATA_CSV
+    if ext.lower() == '.xls' or ext.lower()=='.xlsx': _type = TYPE_DATA_EXCEL
+    return _type
+
 
      

@@ -9,6 +9,7 @@ from _frontend._acceuil import *
 from _frontend._user_activity import *
 from _frontend._mediatheque import *
 from _frontend._profil import *
+from _frontend._questionnaire import *
 
 def hide_menu(st):
         
@@ -79,7 +80,12 @@ def main():
     if rad_menu == 'Profil':
         if not is_connect(): return #show the mediatheque, if and only if he is log in
         main_profil(st=st)
-        #st.write('Profil En construction...')   
+    if rad_menu == 'Questionnaire':
+        if not is_connect(): return
+        group_user = group_user_connect()
+        if not group_user: return
+        if group_user.lower() in [CH_MENTORAT.lower(), CH_SUPERVISEUR.lower()]:
+            main_questionnaire(st=st)
     #add customize footer    
     #footer_end(st=st)
     

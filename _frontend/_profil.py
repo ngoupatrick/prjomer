@@ -110,8 +110,19 @@ def load_form_modif(component, data_user, is_admin=False, ch_key = "modificaton"
                 
         if form_modif.form_submit_button(label="Modifier"):
             ch_rep = update_modif(data_user=data_user, data_new=data_new, is_admin=is_admin)
+            ch_rep = ""
             if ch_rep: form_modif.error(ch_rep)
-            else: form_modif.success("Utilisateur Mis A jour!!")        
+            else:                 
+                if ch_key == "modif_user":#modification venant de l'admin
+                    #si c'est une activation
+                    act_old, act_new = data_user["actif"], data_new["new_actif"]
+                    if type(act_old) == int: act_old = bool(act_old)
+                    if type(act_new) == int: act_new = bool(act_new)
+                    if act_new == True and act_old == False: #activation de compte
+                        #TODO: send mail
+                        _data_user = get_user_data_by_name(username=data_user["username"])
+                        send_email_activation(datareturn=_data_user)
+                        form_modif.success("Utilisateur Mis A jour!!")
 
 def load_form_modif_pass(component, data_user, is_admin=False):
     '''

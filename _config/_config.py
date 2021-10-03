@@ -1,7 +1,11 @@
-LIST_MENU = ["Dashboard", "Médiathèque", "Profil"]
+LIST_MENU = ["Dashboard", "Médiathèque", "Questionnaire", "Profil"]
 LIST_CONNEXION = ["Connexion", "Inscription"]
 LIST_GENDER =  ['Masculin','Feminin']
-LIST_GROUP_USERS = ['g1', 'g2', 'g3']
+#LIST_GROUP_USERS = ['g1', 'g2', 'g3']
+CH_MENTORE = 'mentore'
+CH_MENTORAT = 'mentorat'
+CH_SUPERVISEUR = 'superviseur'
+LIST_GROUP_USERS = [CH_MENTORE, CH_MENTORAT, CH_SUPERVISEUR]
 LIST_CONNEXION = ["Connexion", "Enregistrer"]
 
 LIST_PLOT_UN = [ "barplot", "boxplot"]
@@ -73,4 +77,6 @@ PORT_IMAP_ENTRANT_OVH = 993
 PORT_MAIL_SSL = 465
 SERVER_MAIL_YAHOO = "smtp.mail.yahoo.com"
 PORT_YAHOO_MAIL = 587
-#PASS_OVH_ADMIN_EMAIL = "Patson1234_"
+
+TYPE_DATA_EXCEL = "xlsx"
+TYPE_DATA_CSV = "csv"

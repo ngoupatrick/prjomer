@@ -136,34 +136,6 @@ def load_form_login_signup(st):
                     #TODO: reinit fields                
             else: data_return["label_info"].error("Veuillez bien vérifier les champs (email ou nom d'utlisateur) ou utiliser un autre nom d'utilisateur")                  
 
-def send_confirmation_email(datareturn):
-    '''
-    Send mail before signup as new user
-    '''
-    subject = f"[{CH_APP}]- Nouvel utilisateur: Attente d'activation de compte"
-    body_text = None
-    body_html = f"""
-        <html>
-        <body>
-            <p>Bonjour <b>Admin</b>,<br>
-            Un nouvel utilisater s'enregistré.<br>
-            Vous êtes prié de vérifier ses informations et éventuellement activer son compte.<br><br>
-            <u>Informations du nouvel utilisateur:</u><br>
-            Compte : <b>{datareturn["username"]}</b><br>
-            Email : <b>{datareturn["email"]}</b><br>
-            Noms & prénoms : <b>{datareturn["nom"]}</b><br>
-            Group : <b>{datareturn["group"]}</b><br>
-            Sexe : <b>{datareturn["gender"]}</b><br>
-            Etablissement : <b>{datareturn["ets"]}</b><br>
-            Métier : <b>{datareturn["metier"]}</b><br><br><br>
-                        
-            <a href="http://www.dit.sn">OMER and Open Mind At DIT</a> <br>
-            Attente de réponse.
-            </p>
-        </body>
-        </html>
-        """ 
-    return send_mail_to_admin(subject=subject, body_text=body_text, body_html=body_html)
   
 
 def home_page(st, component):

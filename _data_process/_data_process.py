@@ -1,5 +1,6 @@
 import importlib as lib
 from _config._config import *
+from _backend._file_manager import *
 
 pd = lib.import_module(CH_PANDAS)
 np = lib.import_module(CH_NUMPY)
@@ -10,7 +11,11 @@ def load_df_data(file_path):
     '''
     read data with pandas
     '''
-    return pd.read_excel(file_path)
+    type_file = get_type_file(file_name=file_path)
+    df = None
+    if type_file == TYPE_DATA_EXCEL: df = pd.read_excel(file_path)
+    if type_file == TYPE_DATA_CSV: df = pd.read_csv(file_path)
+    return df
 
 @sts.cache
 def df_columns(df):
