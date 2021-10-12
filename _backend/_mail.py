@@ -39,7 +39,7 @@ def send_mail_from_admin(recipient, subject, body_text, body_html):
     if not check_email(recipient): return "Bad recipient mail"
     #message to send
     message = MIMEMultipart()
-    message['Susend_mail_from_adminbject'] = subject
+    message['Subject'] = subject
     message['From'] = sender
     message['To'] = recipient
     if body_text: message.attach(MIMEText(body_text, 'plain'))
@@ -48,7 +48,7 @@ def send_mail_from_admin(recipient, subject, body_text, body_html):
     server, port = get_server_ovh_mail()
     context=ssl.create_default_context()
     # Send Email
-    with smtplib.SMTP_SSL(server, port=port, context=context) as email_server:
+    with smtplib.SMTP_SSL(host=server, port=port, context=context) as email_server:
         email_server.login(sender, pass_sender)
         email_server.send_message(message)
         #email_server.send_message(msg=message, from_addr=sender, to_addrs=recipient)
@@ -107,7 +107,8 @@ def send_confirmation_email(datareturn):
             Group : <b>{datareturn["group"]}</b><br>
             Sexe : <b>{datareturn["gender"]}</b><br>
             Etablissement : <b>{datareturn["ets"]}</b><br>
-            Métier : <b>{datareturn["metier"]}</b><br><br><br>
+            Métier : <b>{datareturn["metier"]}</b><br>
+            Tel : <b>{datareturn["tel"]}</b><br><br><br>
                         
             <a href="http://www.dit.sn">OMER and Open Mind At DIT</a> <br>
             Attente de réponse.

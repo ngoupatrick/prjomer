@@ -67,6 +67,7 @@ def markdown_info_user(data_user):
     ch_markdown += f"<u>Group:</u>  ***{data_user['group']}*** <br>"
     ch_markdown += f"<u>Etablissement:</u>  ***{data_user['ets']}*** <br>"
     ch_markdown += f"<u>Metiers:</u>  ***{data_user['metier']}*** <br>"
+    ch_markdown += f"<u>Tel:</u>  ***{data_user['tel']}*** <br>"
     ch_markdown += f"<u>Etat:</u>  ***{transform_etat(data_user['actif'])}*** <br>"
     return ch_markdown
 
@@ -93,6 +94,7 @@ def load_form_modif(component, data_user, is_admin=False, ch_key = "modificaton"
         new_mail = form_modif.text_input(label = "Username or Email", value = data_user["email"])
         new_ets = form_modif.text_input(label = "Etablissement", value = data_user["ets"])
         new_metier = form_modif.text_input(label = "Metier", value = data_user["metier"])
+        new_tel = form_modif.text_input(label = "Tel", value = data_user["tel"])
         new_group = form_modif.selectbox(label = 'Groupe', options = LIST_GROUP_USERS, index = LIST_GROUP_USERS.index(data_user['group']))
         new_gender = form_modif.selectbox(label = 'Sexe', options = LIST_GENDER, index = LIST_GENDER.index(data_user['gender']))
         
@@ -102,7 +104,8 @@ def load_form_modif(component, data_user, is_admin=False, ch_key = "modificaton"
                 "new_group":new_group,
                 "new_gender":new_gender,
                 "new_ets": new_ets,
-                "new_metier": new_metier
+                "new_metier": new_metier,
+                "new_tel": new_tel
                 }
         if is_admin:#Montrer actif si admin
             new_actif = form_modif.checkbox(label="Activer", value = bool(int(data_user['actif'])))
@@ -122,7 +125,7 @@ def load_form_modif(component, data_user, is_admin=False, ch_key = "modificaton"
                         #TODO: send mail
                         _data_user = get_user_data_by_name(username=data_user["username"])
                         send_email_activation(datareturn=_data_user)
-                        form_modif.success("Utilisateur Mis A jour!!")
+                form_modif.success("Utilisateur Mis A jour!!")
 
 def load_form_modif_pass(component, data_user, is_admin=False):
     '''
@@ -146,6 +149,82 @@ def load_form_modif_pass(component, data_user, is_admin=False):
             if ch_rep:
                 form_modif.error(ch_rep)
             else: form_modif.success("Mot de passe utilisateur Mis A jour!!")
+            
+def load_form_modif_sonu(component, data_user, is_admin=False):
+    '''
+    create the SONU modification form
+    '''
+    #get user structure
+    _val, index_region, index_district, index_structure = None, None, None, None
+    if data_user:
+        _val = get_sonu_by_key(key=data_user["structure"])
+        old_region = _val["Region"]
+        old_district = _val["District"]
+        old_structure = _val["structure"]
+    #end
+    form_container = component.container()
+    ls_region = [CH_VIDE]
+    ls_region.extend(get_all_sonu_region())
+    #find region index
+    try:
+        if _val: index_region = ls_region.index(_val["Region"])
+        else: index_region = 0 
+    except: index_region = 0
+    #end        
+    group_region = form_container.selectbox(label = 'Région(*)', options = ls_region, index=index_region)
+    ls_district = [CH_VIDE]
+    if group_region:
+        if group_region==CH_VIDE: return
+        ls_district = [CH_VIDE]
+        ls_district.extend(get_all_sonu_district(region = group_region))
+    #find district index
+    try:
+        if _val: index_district = ls_district.index(_val["District"])
+        else: index_district = 0 
+    except: index_district = 0
+    #end            
+    group_district = form_container.selectbox(label = 'District(*)', options = ls_district, index=index_district)
+    ls_structure = [CH_VIDE]
+    if group_district:
+        if group_district==CH_VIDE: return
+        ls_structure = [CH_VIDE]
+        ls_structure.extend(get_all_sonu_structure(district=group_district))
+    
+    #find structure index
+    try:
+        if _val: index_structure = ls_structure.index(_val["structure"])
+        else: index_structure = 0 
+    except: index_structure = 0
+    #end     
+    group_structure = form_container.selectbox(label = 'Structure(*)', options = ls_structure, index = index_structure)
+    btn = form_container.button(label="Modifier")
+    data_new = None
+    if btn:
+        data_new = {
+            "Region": group_region,
+            "District": group_district,
+            "structure": group_structure
+        }
+        ch_rep = update_modif_structure(data_user=data_user, data_new=data_new, is_admin=is_admin)
+        if ch_rep:
+            form_container.error(ch_rep)
+        else: form_container.success("Structure de l'utilisateur Mis A jour!!")
+
+def update_modif_structure(data_user, data_new, is_admin=False):
+    '''
+    Check and save new user structure
+    '''
+    if not is_admin: return "Vous devez être administrateur"
+    if data_user==None or data_new == None: return "Veuillez remplir les champs"
+    region, district, structure = data_new["Region"], data_new["District"], data_new["structure"]
+    if None in [region, district, structure]: return "Veuillez remplir tous les champs"
+    if CH_VIDE in [region, district, structure]: return "Veuillez remplir tous les champs"
+    _key = find_key_sonu(region=region, district=district, structure=structure)
+    if int(_key)==0: return "Structure inconue"
+    dt_user = data_user.copy()
+    dt_user["structure"] = _key
+    add_user_credentials(data_user=dt_user)
+    return ""
     
 def update_modif(data_user, data_new, is_admin = False): 
     '''
@@ -162,6 +241,7 @@ def update_modif(data_user, data_new, is_admin = False):
     dt_user["gender"] = data_new["new_gender"] 
     dt_user["ets"] = data_new["new_ets"].strip()
     dt_user["metier"] = data_new["new_metier"].strip()
+    dt_user["tel"] = data_new["new_tel"].strip()
     if is_admin:
         dt_user["actif"] = int(data_new["new_actif"])#mettre a jour si actif
     add_user_credentials(data_user=dt_user)
@@ -201,7 +281,15 @@ def load_all_users(component, is_admin_):
     _list_users = [k for k,v in credentials.items() if not is_admin(username=v["username"])]
     list_users.extend(_list_users)
     choix_user = col_info.selectbox(label = "Liste des utilisateurs", options = list_users)
+    ch_act_0, ch_act_1, ch_act_2 = CH_VIDE, "modifier l'utilisateur", 'modifier la structure'
+    list_actions = [ch_act_0, ch_act_1, ch_act_2]
+    choix_action = col_info.selectbox(label = "Actions", options = list_actions)
     
-    if choix_user!=CH_VIDE:
-        load_form_modif(component=col_modif, data_user=credentials[choix_user], ch_key='modif_user', is_admin=is_admin_)
+    if choix_user!=CH_VIDE and choix_action!=CH_VIDE:
+        if choix_action==ch_act_1:
+            load_form_modif(component=col_modif, data_user=credentials[choix_user], ch_key='modif_user', is_admin=is_admin_)
+        if choix_action==ch_act_2:
+            load_form_modif_sonu(component=col_modif, data_user=credentials[choix_user], is_admin=is_admin_)
+            
+                
         

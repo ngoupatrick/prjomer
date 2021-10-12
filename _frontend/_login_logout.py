@@ -40,15 +40,16 @@ def signupForm(component):
     col1, col2 = form.columns(2)
     form.markdown("---")   
       
+    nom_prenom = col1.text_input(label = 'Noms et prénoms(*)')
     username = col1.text_input(label = 'Compte utilisateur(*)')
     email = col1.text_input(label = 'Email(*)')
     pw = col1.text_input(label='Mot de passe(*)', type = "password")
-    ets = col1.text_input(label = "Etablissement(*)")
-           
-    nom_prenom = col2.text_input(label = 'Noms et prénoms(*)')
-    group_user = col2.selectbox(label = 'Groupe(*)', options = LIST_GROUP_USERS)
+     
+    tel = col2.text_input(label = "Numéro de téléphone(*)")
+    ets = col2.text_input(label = "Etablissement(*)")
     gender = col2.selectbox(label = 'Sexe(*)', options = LIST_GENDER)
     metier = col2.text_input(label = "Métiers(*)")
+    group_user = col2.selectbox(label = 'Groupe(*)', options = LIST_GROUP_USERS)
     #actif = col2.checkbox(label="Actif", value=True)
     
     bas_1, bas_2 = form.empty().columns(2)
@@ -65,6 +66,7 @@ def signupForm(component):
             "gender":gender,
             "ets": ets,
             "metier": metier,
+            "tel": tel,
             "actif": 0
             }
 

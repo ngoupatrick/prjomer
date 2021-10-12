@@ -1,5 +1,5 @@
-LIST_MENU = ["Dashboard", "Médiathèque", "Questionnaire", "Profil"]
-LIST_CONNEXION = ["Connexion", "Inscription"]
+LIST_MENU = ["Accueil", "Dashboard", "Médiathèque", "Enquete", "Profil"]
+#LIST_CONNEXION = ["Connexion", "Inscription"]
 LIST_GENDER =  ['Masculin','Feminin']
 #LIST_GROUP_USERS = ['g1', 'g2', 'g3']
 CH_MENTORE = 'mentore'
@@ -48,6 +48,7 @@ PATH_FOLDER_MEDIATHEQUE = "./_data/_mediatheque"
 PATH_FILE_CONFIG = "conf.json"
 PATH_FILE_CREDENTIALS = "credentials.json"
 PATH_FILE_MEDIATHEQUE_CONF = "media_conf.json"
+PATH_FILE_SONU = "sonu.json"
 
 PATH_FILE_IMAGE_GRAPH = "head_science.jpg"
 

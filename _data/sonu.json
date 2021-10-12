@@ -1,0 +1,996 @@
+{
+    "1": {
+        "Region": "Dakar",
+        "District": "Dakar Centre",
+        "structure": "CS Gaspard Camara",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "2": {
+        "Region": "Dakar",
+        "District": "Dakar Centre",
+        "structure": "CS Hann Mer",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "3": {
+        "Region": "Dakar",
+        "District": "Dakar Centre",
+        "structure": "C.S Mariste",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "4": {
+        "Region": "Dakar",
+        "District": "Dakar Nord",
+        "structure": "CS SAMU Municipal Grand Yoff",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "5": {
+        "Region": "Dakar",
+        "District": "Dakar Nord",
+        "structure": "EPS HOGIP",
+        "type sonu": "SONUC",
+        "type structure": "EPS 3"
+    },
+    "6": {
+        "Region": "Dakar",
+        "District": "Dakar Nord",
+        "structure": "CS Nabil Choucair",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "7": {
+        "Region": "Dakar",
+        "District": "Dakar Nord",
+        "structure": "CS Parcelles Assainies",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "8": {
+        "Region": "Dakar",
+        "District": "Dakar Ouest",
+        "structure": "CS Philippe Senghor",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "9": {
+        "Region": "Dakar",
+        "District": "Dakar Ouest",
+        "structure": "EPS Militaire de Ouakam (HMO)",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "10": {
+        "Region": "Dakar",
+        "District": "Dakar Ouest",
+        "structure": "PS Annette Mbaye",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "11": {
+        "Region": "Dakar",
+        "District": "Dakar Sud",
+        "structure": "EPS2 ABASS NDAO",
+        "type sonu": "SONUC",
+        "type structure": "EPS 3"
+    },
+    "12": {
+        "Region": "Dakar",
+        "District": "Dakar Sud",
+        "structure": "EPS3 ARISTITE LE DANTEC",
+        "type sonu": "SONUC",
+        "type structure": "EPS 3"
+    },
+    "13": {
+        "Region": "Dakar",
+        "District": "Dakar Sud",
+        "structure": "EPS 1 Institut Hygiene Sociale",
+        "type sonu": "SONUC",
+        "type structure": "EPS 1"
+    },
+    "14": {
+        "Region": "Dakar",
+        "District": "Dakar Sud",
+        "structure": "EPS3 PRINCIPAL DE DAKAR",
+        "type sonu": "SONUC",
+        "type structure": "EPS 3"
+    },
+    "15": {
+        "Region": "Dakar",
+        "District": "Diamniadio",
+        "structure": "CS Diamniadio",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "16": {
+        "Region": "Dakar",
+        "District": "Diamniadio",
+        "structure": "Yenne",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "17": {
+        "Region": "Dakar",
+        "District": "Diamniadio",
+        "structure": "Maternite Sebikotane",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "18": {
+        "Region": "Dakar",
+        "District": "Guediawaye",
+        "structure": "P.S. Fith Mith",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "19": {
+        "Region": "Dakar",
+        "District": "Guediawaye",
+        "structure": "Nimzath",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "20": {
+        "Region": "Dakar",
+        "District": "Guediawaye",
+        "structure": "EPS 1 ROI BAUDOIN",
+        "type sonu": "SONUC",
+        "type structure": "EPS 1"
+    },
+    "21": {
+        "Region": "Dakar",
+        "District": "Keur Massar",
+        "structure": "Maternite Yeumbeul",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "22": {
+        "Region": "Dakar",
+        "District": "Keur Massar",
+        "structure": "Malika",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "23": {
+        "Region": "Dakar",
+        "District": "Keur Massar",
+        "structure": "Boune",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "24": {
+        "Region": "Dakar",
+        "District": "Keur Massar",
+        "structure": "PS Keur Massar Village",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "25": {
+        "Region": "Dakar",
+        "District": "Keur Massar",
+        "structure": "CS Keur Massar",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "26": {
+        "Region": "Dakar",
+        "District": "Mbao",
+        "structure": "Thiaroye  Gare",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "27": {
+        "Region": "Dakar",
+        "District": "Mbao",
+        "structure": "CS Mbao Gare",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "28": {
+        "Region": "Dakar",
+        "District": "Mbao",
+        "structure": "CS Khadim Rassoul",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "29": {
+        "Region": "Dakar",
+        "District": "Mbao",
+        "structure": "EPS3 PIKINE",
+        "type sonu": "SONUC",
+        "type structure": "EPS 3"
+    },
+    "30": {
+        "Region": "Dakar",
+        "District": "Pikine",
+        "structure": "CS Dominique",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "31": {
+        "Region": "Dakar",
+        "District": "Pikine",
+        "structure": "Deggo",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "32": {
+        "Region": "Dakar",
+        "District": "Rufisque",
+        "structure": "CS Polyclinique",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "33": {
+        "Region": "Dakar",
+        "District": "Rufisque",
+        "structure": "Tivaoune Peulh",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "34": {
+        "Region": "Dakar",
+        "District": "Rufisque",
+        "structure": "EPS 1 Youssou Mbargane DIOP",
+        "type sonu": "SONUC",
+        "type structure": "EPS 1"
+    },
+    "35": {
+        "Region": "Dakar",
+        "District": "Rufisque",
+        "structure": "Jaxaay",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "36": {
+        "Region": "Diourbel",
+        "District": "Bambey",
+        "structure": "Baba Garage",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "37": {
+        "Region": "Diourbel",
+        "District": "Bambey",
+        "structure": "CS Bambey",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "38": {
+        "Region": "Diourbel",
+        "District": "Bambey",
+        "structure": "Ngoye",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "39": {
+        "Region": "Diourbel",
+        "District": "Diourbel",
+        "structure": "Cheikh Anta",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "40": {
+        "Region": "Diourbel",
+        "District": "Diourbel",
+        "structure": "CS Diourbel",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "41": {
+        "Region": "Diourbel",
+        "District": "Diourbel",
+        "structure": "EPS Diourbel",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "42": {
+        "Region": "Diourbel",
+        "District": "Mbacke",
+        "structure": "CS Mbacke",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "43": {
+        "Region": "Diourbel",
+        "District": "Mbacke",
+        "structure": "Croix Rouge",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "44": {
+        "Region": "Diourbel",
+        "District": "Mbacke",
+        "structure": "Taif",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "45": {
+        "Region": "Diourbel",
+        "District": "Touba",
+        "structure": "EPS NDAMATOU",
+        "type sonu": "SONUC",
+        "type structure": "EPS 1"
+    },
+    "46": {
+        "Region": "Diourbel",
+        "District": "Touba",
+        "structure": "CS Darou Tanzil",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "47": {
+        "Region": "Diourbel",
+        "District": "Touba",
+        "structure": "EPS MATLABOUL FAWZAINI ",
+        "type sonu": "SONUC",
+        "type structure": "EPS 3"
+    },
+    "48": {
+        "Region": "Diourbel",
+        "District": "Touba",
+        "structure": "CS Darou Khoudouss",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "49": {
+        "Region": "Diourbel",
+        "District": "Touba",
+        "structure": "CS Serigne Saliou Mbacke",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "50": {
+        "Region": "Diourbel",
+        "District": "Touba",
+        "structure": "CS Darou Marnane",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "51": {
+        "Region": "Diourbel",
+        "District": "Touba",
+        "structure": "CS Keur Niang",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "52": {
+        "Region": "Fatick",
+        "District": "Diofior",
+        "structure": "CS DIOFIOR",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "53": {
+        "Region": "Fatick",
+        "District": "Fatick",
+        "structure": "EPS Fatick",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "54": {
+        "Region": "Fatick",
+        "District": "Foundiougne",
+        "structure": "CS FOUNDIOUGNE",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "55": {
+        "Region": "Fatick",
+        "District": "Gossas",
+        "structure": "CS Gossas",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "56": {
+        "Region": "Fatick",
+        "District": "Niakhar",
+        "structure": "CS de Niakhar",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "57": {
+        "Region": "Fatick",
+        "District": "Passy",
+        "structure": "CS Passy",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "58": {
+        "Region": "Fatick",
+        "District": "Sokone",
+        "structure": "Karang",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "59": {
+        "Region": "Fatick",
+        "District": "Sokone",
+        "structure": "CS SOKONE",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "60": {
+        "Region": "Kaffrine",
+        "District": "Birkelane",
+        "structure": "CS Birkelane",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "61": {
+        "Region": "Kaffrine",
+        "District": "Birkelane",
+        "structure": "Mabo",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "62": {
+        "Region": "Kaffrine",
+        "District": "Kaffrine",
+        "structure": "EPS Kaffrine",
+        "type sonu": "SONUC",
+        "type structure": "EPS 1"
+    },
+    "63": {
+        "Region": "Kaffrine",
+        "District": "Kaffrine",
+        "structure": "Nganda",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "64": {
+        "Region": "Kaffrine",
+        "District": "Koungheul",
+        "structure": "CS Koungheul",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "65": {
+        "Region": "Kaffrine",
+        "District": "Malem Hodar",
+        "structure": "CS de Malem Hodar",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "66": {
+        "Region": "Kaolack",
+        "District": "Guinguineo",
+        "structure": "CS Guinguineo",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "67": {
+        "Region": "Kaolack",
+        "District": "Kaolack",
+        "structure": "EPS Elh Ibrahima Niass",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "68": {
+        "Region": "Kaolack",
+        "District": "Kaolack",
+        "structure": "C.S Kasnack",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "69": {
+        "Region": "Kaolack",
+        "District": "Kaolack",
+        "structure": "Gandiaye",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "70": {
+        "Region": "Kaolack",
+        "District": "Ndoffane",
+        "structure": "CS Ndoffane",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "71": {
+        "Region": "Kaolack",
+        "District": "Ndoffane",
+        "structure": "Ndiedieng",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "72": {
+        "Region": "Kaolack",
+        "District": "Nioro",
+        "structure": "CS Nioro",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "73": {
+        "Region": "Kaolack",
+        "District": "Nioro",
+        "structure": "Kaymor",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "74": {
+        "Region": "Kaolack",
+        "District": "Nioro",
+        "structure": "Medina Sabakh",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "75": {
+        "Region": "Kaolack",
+        "District": "Nioro",
+        "structure": "Wack Ngouna",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "76": {
+        "Region": "Kedougou",
+        "District": "Kedougou",
+        "structure": "CS Kedougou",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "77": {
+        "Region": "Kedougou",
+        "District": "Salemata",
+        "structure": "CS Salemata",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "78": {
+        "Region": "Kedougou",
+        "District": "Saraya",
+        "structure": "CS Saraya",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "79": {
+        "Region": "Kolda",
+        "District": "Kolda",
+        "structure": "EPS Kolda",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "80": {
+        "Region": "Kolda",
+        "District": "Kolda",
+        "structure": "CS Kolda",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "81": {
+        "Region": "Kolda",
+        "District": "Kolda",
+        "structure": "Salikegne",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "82": {
+        "Region": "Kolda",
+        "District": "Medina Yoro Foulah",
+        "structure": "CS MYF",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "83": {
+        "Region": "Kolda",
+        "District": "Velingara",
+        "structure": "CS Velingara",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "84": {
+        "Region": "Kolda",
+        "District": "Velingara",
+        "structure": "Diaobe",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "85": {
+        "Region": "Kolda",
+        "District": "Velingara",
+        "structure": "Medina Gounas",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "86": {
+        "Region": "Louga",
+        "District": "Dahra",
+        "structure": "CS DAHRA",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "87": {
+        "Region": "Louga",
+        "District": "Darou Mousty",
+        "structure": "CS DAROU MOUSTY",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "88": {
+        "Region": "Louga",
+        "District": "Kebemer",
+        "structure": "CS KEBEMER",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "89": {
+        "Region": "Louga",
+        "District": "Kebemer",
+        "structure": "Sagatta Guett",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "90": {
+        "Region": "Louga",
+        "District": "Keur Momar Sarr",
+        "structure": "CS Keur Momar Sarr",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "91": {
+        "Region": "Louga",
+        "District": "Keur Momar Sarr",
+        "structure": "Loumboul Mbathie",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "92": {
+        "Region": "Louga",
+        "District": "Koki",
+        "structure": "PS KOKI",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "93": {
+        "Region": "Louga",
+        "District": "Linguere",
+        "structure": "EPS LINGUERE",
+        "type sonu": "SONUC",
+        "type structure": "EPS 1"
+    },
+    "94": {
+        "Region": "Louga",
+        "District": "Louga",
+        "structure": "EPS LOUGA",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "95": {
+        "Region": "Matam",
+        "District": "Kanel",
+        "structure": "CS Kanel",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "96": {
+        "Region": "Matam",
+        "District": "Kanel",
+        "structure": "Dounde",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "97": {
+        "Region": "Matam",
+        "District": "Kanel",
+        "structure": "Sinthiou Bamambe",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "98": {
+        "Region": "Matam",
+        "District": "Matam",
+        "structure": "EPS Ourrosogui",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "99": {
+        "Region": "Matam",
+        "District": "Matam",
+        "structure": "EPS Matam",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "100": {
+        "Region": "Matam",
+        "District": "Thilogne",
+        "structure": "CS Thilogne",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "101": {
+        "Region": "Saint Louis",
+        "District": "Dagana",
+        "structure": "CS Dagana",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "102": {
+        "Region": "Saint Louis",
+        "District": "Pete",
+        "structure": "CS Pete",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "103": {
+        "Region": "Saint Louis",
+        "District": "Pete",
+        "structure": "Medina Ndiatbe",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "104": {
+        "Region": "Saint Louis",
+        "District": "Podor",
+        "structure": "CS Podor",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "105": {
+        "Region": "Saint Louis",
+        "District": "Podor",
+        "structure": "EPS1 de NDioum",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "106": {
+        "Region": "Saint Louis",
+        "District": "Richard Toll",
+        "structure": "EPS  Richard Toll",
+        "type sonu": "SONUC",
+        "type structure": "EPS 1"
+    },
+    "107": {
+        "Region": "Saint Louis",
+        "District": "Saint-Louis",
+        "structure": "EPS 2 Saint-louis",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "108": {
+        "Region": "Saint Louis",
+        "District": "Saint-Louis",
+        "structure": "CS SAINT LOUIS",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "109": {
+        "Region": "Sedhiou",
+        "District": "Bounkiling",
+        "structure": "CS Bounkiling",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "110": {
+        "Region": "Sedhiou",
+        "District": "Bounkiling",
+        "structure": "Medina Wandifa",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "111": {
+        "Region": "Sedhiou",
+        "District": "Goudomp",
+        "structure": "CS Goudomp",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "112": {
+        "Region": "Sedhiou",
+        "District": "Goudomp",
+        "structure": "Tanaff",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "113": {
+        "Region": "Sedhiou",
+        "District": "Sedhiou",
+        "structure": "EPS Sedhiou",
+        "type sonu": "SONUC",
+        "type structure": "EPS 1"
+    },
+    "114": {
+        "Region": "Tambacounda",
+        "District": "Bakel",
+        "structure": "CS Bakel",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "115": {
+        "Region": "Tambacounda",
+        "District": "Goudiry",
+        "structure": "CS GOUDIRY",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "116": {
+        "Region": "Tambacounda",
+        "District": "Kidira",
+        "structure": "CS KIDIRA",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "117": {
+        "Region": "Tambacounda",
+        "District": "Koumpentoum",
+        "structure": "CS Koumpentoum",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "118": {
+        "Region": "Tambacounda",
+        "District": "Koumpentoum",
+        "structure": "Bamba Thialene",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "119": {
+        "Region": "Tambacounda",
+        "District": "Koumpentoum",
+        "structure": "Payar",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "120": {
+        "Region": "Tambacounda",
+        "District": "Tambacounda",
+        "structure": "EPS Tambacounda",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "121": {
+        "Region": "Tambacounda",
+        "District": "Tambacounda",
+        "structure": "CS Tamba",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "122": {
+        "Region": "Thies",
+        "District": "Joal",
+        "structure": "CS Joal",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "123": {
+        "Region": "Thies",
+        "District": "Khombole",
+        "structure": "CS  Khombole",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "124": {
+        "Region": "Thies",
+        "District": "Khombole",
+        "structure": "Kaba",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "125": {
+        "Region": "Thies",
+        "District": "Mbour",
+        "structure": "Santhie",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "126": {
+        "Region": "Thies",
+        "District": "Mbour",
+        "structure": "EPS 1 Mbour",
+        "type sonu": "SONUC",
+        "type structure": "EPS 1"
+    },
+    "127": {
+        "Region": "Thies",
+        "District": "Mbour",
+        "structure": "CS Mbour",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "128": {
+        "Region": "Thies",
+        "District": "Meckhe",
+        "structure": "CS Mekhe",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "129": {
+        "Region": "Thies",
+        "District": "Pout",
+        "structure": "CS Pout",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "130": {
+        "Region": "Thies",
+        "District": "Thiadiaye",
+        "structure": "CS Thiadiaye",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "131": {
+        "Region": "Thies",
+        "District": "Thiadiaye",
+        "structure": "Fissel",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "132": {
+        "Region": "Thies",
+        "District": "Thies",
+        "structure": "CS Thies",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "133": {
+        "Region": "Thies",
+        "District": "Thies",
+        "structure": "EPS2 Amadou S Dieuguene",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "134": {
+        "Region": "Thies",
+        "District": "Tivaouane",
+        "structure": "CS Tivaouane",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "135": {
+        "Region": "Thies",
+        "District": "Tivaouane",
+        "structure": "EPS1 ABDOU AZIZ SY",
+        "type sonu": "SONUC",
+        "type structure": "EPS 1"
+    },
+    "136": {
+        "Region": "Thies",
+        "District": "Tivaouane",
+        "structure": "Mboro I",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "137": {
+        "Region": "Ziguinchor",
+        "District": "Bignona",
+        "structure": "CS Bignona",
+        "type sonu": "SONUC",
+        "type structure": "CS"
+    },
+    "138": {
+        "Region": "Ziguinchor",
+        "District": "Bignona",
+        "structure": "Sindian",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "139": {
+        "Region": "Ziguinchor",
+        "District": "Diouloulou",
+        "structure": "Kafountine",
+        "type sonu": "SONUB",
+        "type structure": "PS"
+    },
+    "140": {
+        "Region": "Ziguinchor",
+        "District": "Thionck-Essyl",
+        "structure": "CS Thionck-Essyl",
+        "type sonu": "SONUB",
+        "type structure": "CS"
+    },
+    "141": {
+        "Region": "Ziguinchor",
+        "District": "Ziguinchor",
+        "structure": "EPS Ziguinchor",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    },
+    "142": {
+        "Region": "Ziguinchor",
+        "District": "Ziguinchor",
+        "structure": "EPS de la Paix",
+        "type sonu": "SONUC",
+        "type structure": "EPS 2"
+    }
+}

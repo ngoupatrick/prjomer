@@ -1,0 +1,24 @@
+{
+    "data": {
+        "admin_email": "test@debatcitoyen.org",
+        "pass_email": "Patson1234_",
+        "codes": ["ets1", "ets2"],
+        "groups": ["mentore", "mentorat", "superviseur"],
+        "groups_unique": ["mentore"],
+        "ets1": {
+            "name": "Nom ets1",
+            "description": "description ets1",
+            "files": ["xlsx_un.xlsx", "xlsx_deux.xls", "persons.xlsx"],
+            "matricule": "ets1",
+            "group": ["superviseur"]
+        },
+        "ets2": {
+            "name": "Nom ets2",
+            "description": "description ets2",
+            "files": ["Olympic Athletes.xlsx", "xlsx_un.xlsx", "Questionnaire_Ministere_Sport.csv"],
+            "matricule": "ets2",
+            "group": ["mentorat", "superviseur"]
+        }
+
+    }
+}

@@ -123,7 +123,7 @@ def check_signup_user(kwargs):
     '''
     d_user = kwargs['kwargs']
     #if user missed some fields
-    if d_user['username'].strip()=='' or d_user['pw'].strip()=='' or d_user['email'].strip()=='' or d_user['nom'].strip()=='' or d_user['metier'].strip()=='':
+    if d_user['tel'].strip()=='' or d_user['username'].strip()=='' or d_user['pw'].strip()=='' or d_user['email'].strip()=='' or d_user['nom'].strip()=='' or d_user['metier'].strip()=='':
         return False        
     #if user already exist
     if find_user(d_user['username'].strip()): return False

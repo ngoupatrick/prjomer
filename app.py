@@ -12,11 +12,11 @@ from _frontend._profil import *
 from _frontend._questionnaire import *
 
 def hide_menu(st):
-        
+       
     hide_streamlit_style = """
             <style>
             MainMenu {visibility: hidden;}    
-            header {visibility: hidden;}   
+            header {visibility: hidden;}
             footer {visibility: hidden;}
             
             footer:after {
@@ -57,7 +57,8 @@ def footer_end(st):
 def main():
     st.set_page_config(
         page_title=CH_APP,
-        page_icon="🧊"
+        page_icon="🧊",
+        initial_sidebar_state="collapsed"
     )
     #hide footer and header
     hide_menu(st=st)
@@ -67,12 +68,15 @@ def main():
     main_sidebar(st = st, sbar=sbar)
     
     rad_menu = get_global_session_objet(session=get_state(), key=KEY_SESSION_RADMENU)
-    if rad_menu=='Dashboard':
+    if rad_menu=="Accueil":
         #login
-        main_login_logout(st)        
+        main_login_logout(st)
+        #load accueil if connect
+        if is_connect(): load_accueil(st = st)        
+    
+    if rad_menu=='Dashboard':                
         #if user is connect or not
         if is_connect(): load_user_activity(st = st)
-        else: load_accueil(st = st)
             
     if rad_menu=='Médiathèque':
         if not is_connect(): return #show the mediatheque, if and only if he is log in
@@ -80,7 +84,7 @@ def main():
     if rad_menu == 'Profil':
         if not is_connect(): return #show the mediatheque, if and only if he is log in
         main_profil(st=st)
-    if rad_menu == 'Questionnaire':
+    if rad_menu == "Enquete":
         if not is_connect(): return
         group_user = group_user_connect()
         if not group_user: return

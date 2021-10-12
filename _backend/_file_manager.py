@@ -71,6 +71,8 @@ def add_user_credentials(data_user):
     dt_user["gender"] = du['gender']
     dt_user["ets"] = du['ets']
     dt_user["metier"] = du['metier']
+    dt_user["tel"] = du['tel']
+    dt_user["structure"] = str(du['structure'])
     dt_user["actif"] = int(du['actif'])
     data = get_all_credentials_data()
     data["credentials"][dt_user["username"]] = dt_user
@@ -212,11 +214,96 @@ def get_file_and_extension(file_name):
 
 #sts.cache
 def get_type_file(file_name):
+    '''
+    get a type of file given his extensions
+    '''
     _,ext = get_file_and_extension(file_name=file_name)
     _type = None
     if ext.lower() == '.csv': _type = TYPE_DATA_CSV
     if ext.lower() == '.xls' or ext.lower()=='.xlsx': _type = TYPE_DATA_EXCEL
     return _type
 
+#sts.cache
+def get_all_sonu():
+    '''
+    get the list of all sonu
+    '''
+    chemin  = get_data_fullpath(_file = PATH_FILE_SONU)
+    if not os.path.isfile(chemin): return None
+    with open(chemin, 'r') as f:
+        data = json.load(f)
+        return data
+    return None
 
-     
+#sts.cache
+def get_sonu_by_key(key):
+    '''
+    find a sonu by key
+    '''
+    sonu = get_all_sonu()
+    if not sonu: return None
+    return sonu.get(key, None)
+
+#sts.cache
+def get_sonu_by_structure(structure):
+    '''
+    get a sonu (key, value), given his structure
+    '''
+    sonu = get_all_sonu()
+    if not sonu: return None
+    for key,val in sonu.items():
+        if val["structure"].lower()==structure.lower():
+            return key, val
+    return None
+
+#sts.cache        
+def get_all_sonu_region():
+    '''
+    get all regions oof sonu
+    '''
+    sonu = get_all_sonu()
+    if not sonu: return None
+    region = set()
+    for _, val in sonu.items():
+        region.add(val["Region"])
+    return list(region)
+
+#sts.cache
+def get_all_sonu_district(region):
+    '''
+    get all district given a sonu region
+    '''
+    sonu = get_all_sonu()
+    if not sonu: return None
+    district = set()
+    for _, val in sonu.items():        
+        if region.lower()==val["Region"].lower():
+            district.add(val["District"])
+    return list(district)
+
+#sts.cache
+def get_all_sonu_structure(district):
+    '''
+    get all structure sonu given his district
+    '''
+    sonu = get_all_sonu()
+    if not sonu: return None
+    structure = set()
+    for _, val in sonu.items():        
+        if district.lower()==val["District"].lower():
+            structure.add(val["structure"])
+    return list(structure)
+
+#sts.cache
+def find_key_sonu(region, district, structure):
+    '''
+    find a sonu key given his (region, district, structure) couple
+    '''
+    sonu = get_all_sonu()
+    if not sonu: return None
+    if None in [region, district, structure]: return None
+    _key = 0
+    for key, val in sonu.items():        
+        if region.lower()==val["Region"].lower() and district.lower()==val["District"].lower() and structure.lower()==val["structure"].lower():
+            _key = key
+    return _key
