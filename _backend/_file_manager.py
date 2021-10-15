@@ -7,6 +7,7 @@ import re
 
 sts = lib.import_module(CH_STREAMLIT_IMPORT)
 
+##GLOBAL FILES MANAGEMENT
 @sts.cache
 def _get_fullpath(_folder,_file):
     return os.path.join(_folder, _file)
@@ -27,12 +28,26 @@ def get_credential_fullpath(_file):
 def get_mediatheque_fullpath(_file):
     return _get_fullpath(_folder = PATH_FOLDER_MEDIATHEQUE, _file=_file)
 
-def get_mediatheque_themes():
+def get_all_data_from_file(chemin):
+    with open(chemin, 'r') as f:
+        data = json.load(f)
+        return data
+    return None
+
+##THEMES MANAGEMENT
+def get_mediatheque_themes(_etat=True):
     chemin = get_mediatheque_fullpath(_file = PATH_FILE_MEDIATHEQUE_CONF)
     if not os.path.isfile(chemin): return None
     with open(chemin, 'r') as f:
         data = json.load(f)
-        return list(data["themes"].keys())
+        themes = data["themes"]
+        l_themes = []
+        for key,val in themes.items():
+            if val['etat'].lower()=="1" and _etat:
+                l_themes.append(key)
+            if not _etat:
+                l_themes.append(key)
+        return l_themes
     return None
 
 def get_mediatheque_themes_files(theme):
@@ -43,6 +58,35 @@ def get_mediatheque_themes_files(theme):
         return data["themes"][theme]["files"]
     return None
 
+def get_mediatheque_themes_data(theme):
+    chemin = get_mediatheque_fullpath(_file = PATH_FILE_MEDIATHEQUE_CONF)
+    if not os.path.isfile(chemin): return None
+    with open(chemin, 'r') as f:
+        data = json.load(f)        
+        return data["themes"][theme]
+    return None
+
+def get_all_mediatheque_data():
+    chemin = get_mediatheque_fullpath(_file = PATH_FILE_MEDIATHEQUE_CONF)
+    if not os.path.isfile(chemin): return None
+    return get_all_data_from_file(chemin=chemin)
+
+#@sts.cache
+def add_theme(data_themes):
+    #["theme"], ["etat"]
+    dt = get_all_mediatheque_data()
+    du = data_themes.copy()
+    dt_theme = dict()     
+    dt_theme["files"] = du["files"]
+    if type(du["etat"]) in (bool, int): dt_theme["etat"] = str(int(du["etat"]))
+    else: dt_theme["etat"] = du["etat"]
+    dt["themes"][du["theme"]] = dt_theme
+    chemin = get_mediatheque_fullpath(_file = PATH_FILE_MEDIATHEQUE_CONF)
+    with open(chemin, 'w') as fp:
+        json.dump(dt, fp)
+    
+
+## USER CREDENTIALS MANAGEMENT
 #@sts.cache
 def get_credentials_data():
     chemin = get_credential_fullpath(_file = PATH_FILE_CREDENTIALS)
@@ -55,10 +99,7 @@ def get_credentials_data():
 def get_all_credentials_data():
     chemin = get_credential_fullpath(_file = PATH_FILE_CREDENTIALS)
     if not os.path.isfile(chemin): return None
-    with open(chemin, 'r') as f:
-        data = json.load(f)
-        return data
-    return None
+    return get_all_data_from_file(chemin=chemin)
 
 def add_user_credentials(data_user):
     du = data_user
@@ -81,15 +122,12 @@ def add_user_credentials(data_user):
     with open(chemin, 'w') as fp:
         json.dump(data, fp)
     
-
+## CONFIGURATIONS FILE MANAGEMENT (GROUP, ACCESS DATA)
 #@sts.cache
 def get_conf_data():
     chemin  = get_data_fullpath(PATH_FILE_CONFIG)
     if not os.path.isfile(chemin): return None
-    with open(chemin, 'r') as f:
-        data = json.load(f)
-        return data
-    return None
+    return get_all_data_from_file(chemin=chemin)
 
 #@sts.cache
 def get_data_ets(ets):
@@ -100,6 +138,7 @@ def get_data_ets(ets):
         return None
 
 
+## USER AND GROUP DATA FILES ACCESS AND MANAGE
 #@sts.cache
 def get_ets_files(ets):
     data = get_data_ets(ets=ets)
@@ -140,6 +179,7 @@ def get_user_files(ets = None, group = None):
     list_files = list(set(list_files))
     return list_files
 
+#USER EMAIL
 #@sts.cache
 def get_admin_email():
     '''
@@ -157,6 +197,7 @@ def get_admin_email_credentials():
     if not data: return None
     return data["data"]["admin_email"], data["data"]["pass_email"]
 
+## GLOBAL FILE MANAGEMENT
 #@sts.cache
 def is_file_in(ets, group, _file):
     list_files = get_user_files(ets=ets, group=group)
@@ -224,16 +265,27 @@ def get_type_file(file_name):
     return _type
 
 #sts.cache
+def save_upload_files(_dir, _files):
+    for file in _files:
+        save_upload_file(_dir=_dir, _file=file["data"], _file_name=file["name"])
+
+#sts.cache
+def save_upload_file(_dir, _file, _file_name):
+    if not _dir or not _file: return False
+    if not os.path.isdir(_dir): return False
+    with open(os.path.join(_dir, _file_name), "wb") as f:
+        f.write(_file.getbuffer())
+    return True
+
+## SONU DATA AND FILE MANAGEMENT
+#sts.cache
 def get_all_sonu():
     '''
     get the list of all sonu
     '''
     chemin  = get_data_fullpath(_file = PATH_FILE_SONU)
     if not os.path.isfile(chemin): return None
-    with open(chemin, 'r') as f:
-        data = json.load(f)
-        return data
-    return None
+    return get_all_data_from_file(chemin=chemin)
 
 #sts.cache
 def get_sonu_by_key(key):

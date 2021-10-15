@@ -12,7 +12,7 @@ from _frontend._profil import *
 from _frontend._questionnaire import *
 
 def hide_menu(st):
-       
+    
     hide_streamlit_style = """
             <style>
             MainMenu {visibility: hidden;}    
@@ -74,25 +74,20 @@ def main():
         #load accueil if connect
         if is_connect(): load_accueil(st = st)        
     
-    if rad_menu=='Dashboard':                
-        #if user is connect or not
-        if is_connect(): load_user_activity(st = st)
+    if rad_menu=='Dashboard': 
+        load_user_activity(st = st)
             
-    if rad_menu=='Médiathèque':
-        if not is_connect(): return #show the mediatheque, if and only if he is log in
+    if rad_menu=='Médiathèque':        
         main_mediatheque(st=st)
-    if rad_menu == 'Profil':
-        if not is_connect(): return #show the mediatheque, if and only if he is log in
+        
+    if rad_menu == 'Profil':        
         main_profil(st=st)
-    if rad_menu == "Enquete":
-        if not is_connect(): return
-        group_user = group_user_connect()
-        if not group_user: return
-        if group_user.lower() in [CH_MENTORAT.lower(), CH_SUPERVISEUR.lower()]:
-            main_questionnaire(st=st)
+        
+    if rad_menu == "Enquete":  
+        main_questionnaire(st=st)  
+        
     #add customize footer    
     #footer_end(st=st)
-    
  
 if __name__ == '__main__':
     main()

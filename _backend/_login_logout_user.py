@@ -40,8 +40,15 @@ def is_admin(username = None):
     Check if a user is admin
     return: true if it is admin
     '''
-    if not username: return bool(username_connect().lower()=="admin")
-    return username.lower() == "admin"
+    if not username:
+        _group_user = group_user_connect()
+        return(_group_user.lower()==CH_SUPERVISEUR.lower())
+    try:
+        return (group_user(username=username).lower()==CH_SUPERVISEUR.lower())
+    except: return False
+        
+    #if not username: return bool(username_connect().lower()=="admin")
+    #return username.lower() == "admin"
 
 def username_connect():
     '''

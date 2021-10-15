@@ -47,25 +47,14 @@ def load_accueil(st):
     rad_menu = get_global_session_objet(session=get_state(), key=KEY_SESSION_RADMENU)
     
     if btn_visualiser:
-        #if user is connect or not        
-        if not is_connect(): return
-        empty_bloc_accueil.empty()
+        #if user is connect or not 
         load_user_activity(st = st)
         
     if btn_mediatheque:
-        if not is_connect(): return #show the mediatheque, if and only if he is log in
-        empty_bloc_accueil.empty()
         main_mediatheque(st=st)
         
     if btn_profil:
-        if not is_connect(): return #show the mediatheque, if and only if he is log in
-        empty_bloc_accueil.empty()
         main_profil(st=st)
         
     if btn_enquette:
-        if not is_connect(): return
-        empty_bloc_accueil.empty()
-        group_user = group_user_connect()
-        if not group_user: return
-        if group_user.lower() in [CH_MENTORAT.lower(), CH_SUPERVISEUR.lower()]:
-            main_questionnaire(st=st)
+        main_questionnaire(st=st)

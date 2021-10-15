@@ -217,6 +217,10 @@ def show_props_user(st, component):
  
 def load_user_activity(st):
     empty_main_bloc = st.empty()
+    if not is_connect():
+        #TODO: set the bloc for managing ets files
+        empty_main_bloc.markdown(f":sweat: [{CH_MUST_BE_CONNECT}]")
+        return
     save_global_session_objet(session=get_state(), key=KEY_SESSION_COMPONENT_MAIN, values=empty_main_bloc)
     #main container
     bloc_main = empty_main_bloc.container()

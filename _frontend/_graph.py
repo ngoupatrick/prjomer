@@ -24,7 +24,8 @@ def graph_plot(df, component, _type_plot, title, kwargs):
         fig, ax = plt.subplots()
         chart = plot_func(data = df, **_kwargs)
         chart.set_title(title)
-        chart.set_xticklabels(chart.get_xticklabels(), rotation=45, horizontalalignment='right')  
+        chart.set_xticklabels(chart.get_xticklabels(), rotation=45, horizontalalignment='right') 
+        chart.set_yticklabels(chart.get_yticklabels(), rotation=45, horizontalalignment='right') 
         component.pyplot(fig)
     #save graph datas
     save_global_session_objet(session=get_state(), key=kwargs["_col_col"], values=kwargs)
