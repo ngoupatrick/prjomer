@@ -48,7 +48,7 @@ def load_info_user(component, data_user, is_admin = False):
     user_exp_container = component.container()
     col_info, col_modif = user_exp_container.columns(2)
     col_info.markdown(markdown_info_user(data_user=data_user), unsafe_allow_html=True)
-    ch_act_0, ch_act_1, ch_act_2, ch_act_3 = CH_VIDE, 'modifier les ipassnfos', 'modifier mon mot de passe', "modifier l'email d'administration"
+    ch_act_0, ch_act_1, ch_act_2, ch_act_3 = CH_VIDE, 'modifier les informations', 'modifier mon mot de passe', "modifier l'email d'administration"
     list_actions = [ch_act_0, ch_act_1, ch_act_2]
     if is_admin: list_actions.extend([ch_act_3])
     choix_action = col_info.selectbox(label = 'Actions', options = list_actions)

@@ -38,6 +38,7 @@ def load_accueil(st):
     bloc_accueil.markdown(f"> ### <u>TYPE DE SONU</u>:  {type_sonu}", unsafe_allow_html=True)
     bloc_accueil.markdown(f"> ### <u>TYPE DE STRUCTURE</u>:  {type_structure}", unsafe_allow_html=True)
     
+    '''
     col1, col2, col3, col4 = bloc_accueil.columns(4)
     btn_visualiser = col1.button(label="Visualiser les données")
     btn_mediatheque = col2.button(label="Accéder à la Médiathèque")
@@ -48,13 +49,18 @@ def load_accueil(st):
     
     if btn_visualiser:
         #if user is connect or not 
+        st.empty()
         load_user_activity(st = st)
         
     if btn_mediatheque:
+        st=st.empty()
         main_mediatheque(st=st)
         
     if btn_profil:
+        st.empty()
         main_profil(st=st)
         
     if btn_enquette:
+        st.empty()
         main_questionnaire(st=st)
+    '''
