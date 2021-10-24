@@ -1,1 +1,31 @@
-{"themes": {"theme_1": {"files": ["ds_un.mp4", "da_deux.mp4"], "etat": "1"}, "theme_2": {"files": ["DS_vs_DA.mp4"], "etat": "1"}, "theme_3": {"files": ["AVATAR_FRONTIERS.mp4"], "etat": "1"}, "theme_4": {"files": ["How to Get Started with Docker.mp4"], "etat": "1"}, "theme_5": {"files": [], "etat": "0"}}}
+{
+    "themes": {
+        "theme_1": {
+            "files": [
+                "ds_un.mp4",
+                "da_deux.mp4"
+            ],
+            "etat": "1"
+        },
+        "theme_2": {
+            "files": [
+                "DS_vs_DA.mp4"
+            ],
+            "etat": "1"
+        },
+        "theme_3": {
+            "files": [
+                "AVATAR_FRONTIERS.mp4"
+            ],
+            "etat": "1"
+        },
+        "theme_4": {
+            "files": [],
+            "etat": "1"
+        },
+        "theme_5": {
+            "files": [],
+            "etat": "0"
+        }
+    }
+}
