@@ -1,7 +1,5 @@
 LIST_MENU = ["Accueil", "Dashboard", "Médiathèque", "Enquete", "Profil"]
-#LIST_CONNEXION = ["Connexion", "Inscription"]
 LIST_GENDER =  ['Masculin','Feminin']
-#LIST_GROUP_USERS = ['g1', 'g2', 'g3']
 CH_MENTORE = 'mentore'
 CH_MENTORAT = 'mentorat'
 CH_SUPERVISEUR = 'superviseur'
@@ -33,8 +31,12 @@ KEY_SESSION_COL_GRAPH_3 = "col_graph_3"
 KEY_SESSION_COL_GRAPH_4 = "col_graph_4"
 LIST_COL_PLOT = [KEY_SESSION_COL_GRAPH_1, KEY_SESSION_COL_GRAPH_2, KEY_SESSION_COL_GRAPH_3, KEY_SESSION_COL_GRAPH_4]
 KEY_SESSION_CURRENT_FILE_DATA = "current_file_data"
+#KEY_SESSION_CURRENT_DF_DATA = "current_df_data"
 KEY_SESSION_CURRENT_COL_GRAPH = "col_graph_en_cours"
 
+KEY_SESSION_SONU_DATA_FOUND = "excel_sonu_data"
+KEY_SESSION_LEVEL_FILTER = "_level_filter"
+KEY_SESSION_DATA_SELECT = "data_select"
 CH_TYPE_LOGIN = 'login'
 CH_TYPE_SIGNUP = 'signup'
 CH_GUEST_NAME = 'Visiteur'
@@ -49,6 +51,7 @@ PATH_FILE_CONFIG = "conf.json"
 PATH_FILE_CREDENTIALS = "credentials.json"
 PATH_FILE_MEDIATHEQUE_CONF = "media_conf.json"
 PATH_FILE_SONU = "sonu.json"
+PATH_FILE_FICHE_EVAL = "Fiche_devaluation_test.xlsx"
 
 PATH_FILE_IMAGE_GRAPH = "head_science.jpg"
 
@@ -68,7 +71,7 @@ CH_TYPE_CREDENTIALS_BD = "bd"
 CH_VIDE = "--"
 CH_APP = "Omer--APP"
 CH_ON_CONSTRUCTION = "SORRY!! BLOC EN CONSTRUCTION........"
-CH_MUST_BE_CONNECT = "SORRY!! VOUS DEVEZ ETRE CONNECTE POUR AVOIR ACCES A CETTE PAGE........"
+CH_MUST_BE_CONNECT = "SORRY!! VOUS DEVEZ ETRE CONNECTE POUR AVOIR ACCES A CETTE PAGE..... \n\n ............VEUILLEZ ALLER A LA PAGE D'ACCEUIL"
 CH_ACCESS_RIGHT = "SORRY!! VOUS NE DISPOSEZ PAS DES DROITS D'ACCES........"
 
 PANDAS_TYPE_DATE = "date"
@@ -83,3 +86,14 @@ PORT_YAHOO_MAIL = 587
 
 TYPE_DATA_EXCEL = "xlsx"
 TYPE_DATA_CSV = "csv"
+
+CH_USE_TEL = "tel"#use tel to find data
+CH_USE_LEVEL = "level"#use group to find data
+
+
+#TODO: Ajout important. A modifier en fonction des noms de columns
+CH_COL_TEL = "Telephone"
+CH_COL_REGION = "Region Medicale de :" # the column name of region in excel file
+CH_COL_DISTRICT_PATTERN = "District de [Dakar]  :" #pattern of district column in excel file
+CH_COL_SONU_PATTERN = "District de [Dakar Centre] :" #pattern of sonu column in excel file
+####END AJOUT#####

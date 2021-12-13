@@ -18,7 +18,7 @@ def main_profil(st):
     
     #show the profiles, if and only if he is log in
     if not is_connect():
-        st.markdown(f":sweat: [{CH_MUST_BE_CONNECT}]")
+        st.markdown(f":sweat: [{CH_MUST_BE_CONNECT}]",unsafe_allow_html=True)
         return 
     
     username = username_connect()

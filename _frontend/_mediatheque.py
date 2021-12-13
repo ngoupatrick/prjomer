@@ -12,7 +12,7 @@ def main_mediatheque(st):
     st.write('flush')
     #show the mediatheque, if and only if he is log in
     if not is_connect():
-        st.markdown(f":sweat: [{CH_MUST_BE_CONNECT}]")
+        st.markdown(f":sweat: [{CH_MUST_BE_CONNECT}]", unsafe_allow_html=True)
         return    
     themes = get_mediatheque_themes()
     main_container = st.container()

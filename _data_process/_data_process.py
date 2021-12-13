@@ -6,8 +6,9 @@ pd = lib.import_module(CH_PANDAS)
 np = lib.import_module(CH_NUMPY)
 sts = lib.import_module(CH_STREAMLIT_IMPORT)
 
-@sts.cache#(suppress_st_warning=True)
-def load_df_data(file_path):
+#@sts.cache#(suppress_st_warning=True)
+#@sts.experimental_singleton
+def load_df_data(file_path, filter= None, col_filter=None, val_filter=None):
     '''
     read data with pandas
     '''
@@ -15,6 +16,19 @@ def load_df_data(file_path):
     df = None
     if type_file == TYPE_DATA_EXCEL: df = pd.read_excel(file_path)
     if type_file == TYPE_DATA_CSV: df = pd.read_csv(file_path)
+    if filter:
+        df = df[df[col_filter]==val_filter]
+    return df
+
+#@sts.cache#(suppress_st_warning=True)
+def filter_df_data(df, col_filter, val_filter):
+    '''
+    filter data with pandas.
+    we get all rows where [col_filter==val_filter]
+    we assume that fields are string
+    '''
+    mask = df[col_filter].str.fullmatch(val_filter, case = False, na = False)#contains, match
+    df = df[mask]
     return df
 
 @sts.cache
@@ -25,11 +39,28 @@ def df_columns(df):
     return list(df.columns)
 
 #@sts.cache(suppress_st_warning=True)
-def drop_df_columns(df, columns):
+def drop_df_columns(df, columns, verifcation = False):
     '''
     drop some columns in a pandas dataFrame
     '''
-    return df.drop(columns=columns)
+    if not verifcation:
+        if isinstance(columns, (list, tuple)):
+            return df.drop(columns=columns)
+        if isinstance(columns, str):
+            return df.drop(columns=[columns])
+        else: return df
+    else:
+        cols = df.columns
+        if isinstance(columns, str):
+            if columns in cols:
+                return df.drop(columns=[columns])
+        if isinstance(columns, (list, tuple)):
+            df_inter=df
+            for col in columns:
+                if col in cols:
+                    df_inter = df_inter.drop(columns=[col])
+            return df_inter
+        else: return df
 
 @sts.cache
 def merge_df_columns(df, col_one, col_two):
@@ -127,7 +158,7 @@ def df_get_type_col(df, column_name):
     pd.api.types.is_bool_dtype
     https://pandas.pydata.org/docs/reference/api/pandas.api.types.is_bool_dtype.html
     '''
-    try: return df[column_name].dtpye
+    try: return df[column_name].dtype
     except: return None
 
 @sts.cache
@@ -149,3 +180,17 @@ def df_is_object(df, column_name):
 def df_is_bool(df, column_name):
     try: return pd.api.types.is_bool_dtype(df[column_name])
     except: return False
+    
+def df_init(cols):
+    '''
+    init a dataframe with columns
+    '''
+    return pd.DataFrame(columns = cols)
+
+def df_add_rows(df, rows):
+    '''
+    add a row in df at the end
+    '''
+    _df = df.copy()
+    _df.loc[len(_df)]=rows
+    return _df

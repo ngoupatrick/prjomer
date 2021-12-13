@@ -9,7 +9,7 @@ sts = lib.import_module(CH_STREAMLIT_IMPORT)
 def main_questionnaire(st):
     #show the questionnaires, if and only if he is log in
     if not is_connect():
-        st.markdown(f":sweat: [{CH_MUST_BE_CONNECT}]")
+        st.markdown(f":sweat: [{CH_MUST_BE_CONNECT}]", unsafe_allow_html=True)
         return    
     #show the questionnaires, if and only if the connected user group is mentorat or superviseur
     group_user = group_user_connect()

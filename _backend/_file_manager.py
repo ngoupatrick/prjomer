@@ -359,3 +359,11 @@ def find_key_sonu(region, district, structure):
         if region.lower()==val["Region"].lower() and district.lower()==val["District"].lower() and structure.lower()==val["structure"].lower():
             _key = key
     return _key
+
+#GET FICHE EVAL PATH
+sts.cache
+def get_path_fiche_evaluation()-> str:
+    '''
+    get the path of evaluation file
+    '''
+    return get_data_fullpath(_file = PATH_FILE_FICHE_EVAL)

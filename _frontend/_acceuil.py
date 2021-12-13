@@ -31,7 +31,7 @@ def load_accueil(st):
             type_sonu = sonu.get('type sonu', CH_VIDE)
             type_structure = sonu.get('type structure', CH_VIDE)
     
-    #showing sonu information
+    #showing sonu informations
     bloc_accueil.markdown(f"> ### <u>REGION</u>:  {region}", unsafe_allow_html=True)
     bloc_accueil.markdown(f"> ### <u>DISTRICT</u>:  {district}", unsafe_allow_html=True)
     bloc_accueil.markdown(f"> ### <u>STRUCTURE</u>:  {structure}", unsafe_allow_html=True)

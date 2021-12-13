@@ -3,7 +3,7 @@ import importlib as lib
 from _config._config import *
 from _backend._session import *
 from _data_process._data_process import *
-from _backend._file_manager import *
+#from _backend._file_manager import *
 
 plt = lib.import_module(CH_MATPLOTLIB)
 sb = lib.import_module(CH_SEABORN)
@@ -15,7 +15,7 @@ def graph_plot(df, component, _type_plot, title, kwargs):
     if _type_plot == 'pie':
         pie(df=df, component=component, kwargs=kwargs, title=title)
     else:
-        l_del = ["_col_col","_col_type", "plot_title", "file_data"]
+        l_del = ["_col_col","_col_type", "plot_title", "file_data", "df_data"]
         _kwargs = kwargs.copy()
         for key in l_del:
             _kwargs.pop(key)
@@ -25,7 +25,7 @@ def graph_plot(df, component, _type_plot, title, kwargs):
         chart = plot_func(data = df, **_kwargs)
         chart.set_title(title)
         chart.set_xticklabels(chart.get_xticklabels(), rotation=45, horizontalalignment='right') 
-        chart.set_yticklabels(chart.get_yticklabels(), rotation=45, horizontalalignment='right') 
+        #chart.set_yticklabels(chart.get_yticklabels(), rotation=45, horizontalalignment='right') 
         component.pyplot(fig)
     #save graph datas
     save_global_session_objet(session=get_state(), key=kwargs["_col_col"], values=kwargs)
@@ -49,14 +49,21 @@ def pie(df, component, kwargs, title):
     plt.title(title, fontsize=10)    
     component.pyplot(pie)
     
-def plot_from_session(key_session, graph_component):
+def plot_from_session(key_session, graph_component, main_filter = CH_USE_LEVEL): # CH_USE_TEL
     '''
     plot a graph with parameters store in session
     '''
+    #TODO: this function use file, we must use next time another things
     data = get_global_session_objet(session=get_state(), key=key_session)
     if not data: return
-    file_path= get_data_fullpath(_file=data["file_data"])
-    df = load_df_data(file_path=file_path)
+    df = None
+    if main_filter == CH_USE_LEVEL:
+        file_path= get_data_fullpath(_file=data["file_data"])
+        df = load_df_data(file_path=file_path)
+    if main_filter == CH_USE_TEL:
+        df = data["df_data"]
+        #TODO: save dataframe in session. be carefull, it should not fill the memory
+        pass
     graph_plot(df=df, component=graph_component, _type_plot = data["_col_type"], title=data["plot_title"], kwargs=data)
     
     

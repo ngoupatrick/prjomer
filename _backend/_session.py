@@ -14,10 +14,11 @@ def get_state():
 def save_global_session_objet(session, key, values):
    session[key] = values
 
-def get_global_session_objet(session, key):
+def get_global_session_objet(session, key, if_None=None):
     if key in session:
         return session[key]
-    return None
+    return if_None
 
 def del_global_session_objet(session, key):
+    #del(session[key])
     save_global_session_objet(session=session, key=key, values=None)
